@@ -49,7 +49,7 @@ else if (age >= 65){
 else {
     priceTicket = priceTicket.toFixed(2);
     console.log(priceTicket);
-    document.querySelector('div > p')`
+    document.querySelector('div > p').innerHTML =`
     Il prezzo è di ${priceTicket}
     `
 }

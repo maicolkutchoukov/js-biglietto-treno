@@ -38,5 +38,5 @@ else if (ageInNumber >= 65){
     console.log(priceDiscount)
 }
 
-document.querySelector('div > p').innerHTML =  "Il prezzo è di:" + priceDiscount.toFixed(2)
+document.querySelector('div > p').innerHTML =  "Il prezzo è di: € " + priceDiscount.toFixed(2)
 

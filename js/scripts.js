@@ -27,16 +27,14 @@ console.log(priceTicket)
 //20% per i minorenni
 //40% per gli over 65
 
-let priceDiscount = priceTicket
-
 if (ageInNumber < 18) {
-    priceDiscount *= 0.8;
-    console.log(priceDiscount)
+    priceTicket *= 0.8;
+    console.log(priceTicket)
 }
 else if (ageInNumber >= 65){
-    priceDiscount *= 0.6;
-    console.log(priceDiscount)
+    priceTicket *= 0.6;
+    console.log(priceTicket)
 }
 
-document.querySelector('div > p').innerHTML =  "Il prezzo è di: € " + priceDiscount.toFixed(2)
+document.querySelector('div > p').innerHTML =  "Il prezzo è di: € " + priceTicket.toFixed(2)
 

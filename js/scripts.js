@@ -10,46 +10,33 @@
 
 
 // Richiesta età del passeggero 
-let age
-age = prompt("Inserisci la tua età");
+
+const age = prompt("Inserisci la tua età");
+const ageInNumber = parseInt(age)
 
 // Richiesta Km da percorrere
-let km = prompt("Inserisci il numero di km da percorrere");
+const km = prompt("Inserisci il numero di km da percorrere");
+const kmInNumber = parseInt(km)
 
 // Calcolo Prezzo del biglietto senza sconti
 let priceTicket;
-priceTicket = (km * 0.21)
+priceTicket = (kmInNumber * 0.21)
 console.log(priceTicket)
 
 //Calcolo prezzo del biglietto con sconti:
 //20% per i minorenni
 //40% per gli over 65
-let priceTicketUnderage;
-let priceTicketOver;
 
-if (age <= 18) {
-    priceTicketUnderage = (priceTicket - (priceTicket * 20 / 100));
-    priceTicketUnderage = priceTicketUnderage.toFixed(2);
-    console.log(priceTicketUnderage);
-    document.querySelector('div > p').innerHTML = `
-    Il prezzo è di : ${priceTicket} 
-    Però dato che sei minorenne hai uno sconto del 20%, il tuo prezzo è di : ${priceTicketUnderage}
-    `
+let priceDiscount = priceTicket
 
+if (ageInNumber < 18) {
+    priceDiscount *= 0.8;
+    console.log(priceDiscount)
 }
-else if (age >= 65){
-    priceTicketOver = (priceTicket - (priceTicket * 40 / 100));
-    priceTicketOver = priceTicketOver.toFixed(2);
-    console.log(priceTicketOver);
-    document.querySelector('div > p').innerHTML = `
-    Il prezzo è di ${priceTicket}
-    Però dato che sei over 65 hai uno sconto del 40%, il tuo prezzo è di ${priceTicketOver}
-    `
+else if (ageInNumber >= 65){
+    priceDiscount *= 0.6;
+    console.log(priceDiscount)
 }
-else {
-    priceTicket = priceTicket.toFixed(2);
-    console.log(priceTicket);
-    document.querySelector('div > p').innerHTML =`
-    Il prezzo è di ${priceTicket}
-    `
-}
+
+document.querySelector('div > p').innerHTML =  "Il prezzo è di:" + priceDiscount.toFixed(2)
+
